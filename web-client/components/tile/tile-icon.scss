@@ -1,0 +1,79 @@
+.--theme-negative {
+    .tile-icon__component {
+        .tile-icon__image {
+            color: #AAA;
+        }
+        .tile-icon__external-icon {
+            svg {
+                fill: #AAA;
+            }
+        }
+    }
+
+    &.--accent-orange {
+        $color: rgb(253, 156, 30);
+        .tile-icon__component {
+            .tile-icon__image {
+                color: $color;
+            }
+            .tile-icon__external-icon {
+                svg {
+                    fill: $color;
+                }
+            }
+        }
+    }
+
+    &.--accent-blue {
+        $color: rgb(131, 182, 202);
+        .tile-icon__component {
+            .tile-icon__image {
+                color: $color;
+            }
+            .tile-icon__external-icon {
+                svg {
+                    fill: $color;
+                }
+            }
+        }
+    }
+}
+
+.tile-icon__component {
+    width: 100%;
+    position: relative;
+    padding-bottom: 70%;
+
+    .tile-icon__image {
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        justify-content: center;
+        align-items: center;
+        font-size: 4.5rem;
+        color: #555;
+        @media (prefers-color-scheme: dark) {
+            color: #AAA;
+        }
+    }
+
+    .tile-icon__external-icon {
+        display: flex;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        justify-content: center;
+        align-items: center;
+        svg {
+            fill: #555;
+            @media (prefers-color-scheme: dark) {
+                fill: #AAA;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+@import "../../styles/main";
+
+.fixed-background__component {
+    display: none;
+
+    @media (prefers-color-scheme: dark) {
+        display: block;
+    }
+
+    position: fixed;
+    z-index: -2;
+    left: -10px;
+    top: -10px;
+    right: -10px;
+    bottom: -10px;
+    opacity: .5;
+    background-color: #1d1d1d;
+    filter: blur(3px);
+
+    canvas {
+        z-index: 0;
+    }
+
+    .__cover {
+        z-index: 1;
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        right: -10px;
+        bottom: -10px;
+        background-color: rgba(#1d1d1d, .4);
+    }
+}

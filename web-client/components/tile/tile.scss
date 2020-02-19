@@ -1,0 +1,73 @@
+@import "../../styles/main";
+
+.--theme-negative {
+    .tile__component {
+        border: 1px solid #222;
+        background-color: lighten(#0d0d0d, 3%);
+        $insetShadowColor: rgba(#0d0d0d, 1);
+        box-shadow: inset 0 1px 0 $insetShadowColor, inset -1px 0 0 $insetShadowColor, inset 0 -1px 0 $insetShadowColor, inset 1px 0 0 $insetShadowColor;
+
+        .tile__content {
+            .tile__content-title {
+                color: #AAA;
+                $textShadowColor: rgba(black, 1);
+                text-shadow: 1px 0 0 $textShadowColor;
+            }
+        }
+    }
+}
+
+.tile__component {
+    border: 1px solid #DEDEDE;
+    background-color: #F6F6F6;
+    $insetShadowColor: rgba(white, 1);
+    box-shadow: inset 0 1px 0 $insetShadowColor, inset -1px 0 0 $insetShadowColor, inset 0 -1px 0 $insetShadowColor, inset 1px 0 0 $insetShadowColor;
+    @media (prefers-color-scheme: dark) {
+        border: 1px solid #222;
+        background-color: lighten(#0d0d0d, 3%);
+        $insetShadowColor: rgba(#0d0d0d, 1);
+        box-shadow: inset 0 1px 0 $insetShadowColor, inset -1px 0 0 $insetShadowColor, inset 0 -1px 0 $insetShadowColor, inset 1px 0 0 $insetShadowColor;
+    }
+    border-radius: 3px;
+    padding-bottom: 100%;
+    position: relative;
+
+    .tile__content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        @include small-up {
+            padding: 10px;
+        }
+        @include large-up {
+            padding: 20px;
+        }
+
+        .tile__content-title {
+            font-size: 1.5rem;
+            text-align: center;
+            font-weight: 300;
+            transform: scaleY(.96);
+            user-select: none;
+            color: #888;
+            $textShadowColor: rgba(white, 1);
+            text-shadow: 1px 0 0 $textShadowColor;
+            @media (prefers-color-scheme: dark) {
+                color: #AAA;
+                $textShadowColor: rgba(black, 1);
+                text-shadow: 1px 0 0 $textShadowColor;
+            }
+
+            @include large-up {
+                white-space: nowrap;
+            }
+        }
+    }
+
+    
+}

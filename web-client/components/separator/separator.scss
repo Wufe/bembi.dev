@@ -1,0 +1,16 @@
+@import "../../styles/main";
+
+.separator__component {
+    @include container;
+    display: flex;
+    justify-content: center;
+    opacity: .5;
+    max-height: 100px;
+
+    img {
+        width: 600px;
+        height: auto;
+        object-fit: contain;
+        max-width: 100%;
+    }
+}

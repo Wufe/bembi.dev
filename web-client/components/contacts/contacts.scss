@@ -1,0 +1,98 @@
+@import "../../styles/main.scss";
+
+.contacts__component {
+    @include full-container;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 60px;
+
+    .__title {
+        font-size: 3rem;
+        font-weight: 200;
+
+        margin-bottom: 10px;
+        @include medium-up {
+            margin-bottom: 20px;
+        }
+    }
+
+    .__grid { 
+        @include small-up {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include medium-up {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            grid-template-rows: repeat(5, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .__image {
+            grid-area: 2 / 2 / 5 / 3;
+            width: 280px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            img {
+                width: 100px;
+                height: 100px;
+                border-radius: 3px;
+            }
+        }
+
+        .__contact {
+
+            height: 50px;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 200;
+            transform: scaleY(.90);
+            letter-spacing: .02em;
+
+            &.--empty {
+                height: 0;
+            }
+
+            display: flex;
+            align-items: center;
+
+            @include small-up {
+                justify-content: center;
+            }
+
+            @include medium-up {
+
+                &.--right {
+                    justify-content: flex-end;
+                }
+                &.--left {
+                    justify-content: flex-start;
+                }
+                &.--center {
+                    justify-content: center;
+                }
+
+            }
+
+            color: black;
+
+            @media (prefers-color-scheme: dark) {
+                color: white;
+            }
+
+            .fa {
+                display: inline-block;
+                margin: 0 10px;
+            }
+
+        }
+    }
+}
