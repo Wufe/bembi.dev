@@ -60,5 +60,6 @@ func GetHomeHandlers(party iris.Party) func(services.HomeService, http.FileSyste
 		})
 		party.Get("/", serveIndex)
 		party.Get("/projects/rpj", serveIndex)
+		party.Get("/projects/liquid", serveIndex)
 	}
 }

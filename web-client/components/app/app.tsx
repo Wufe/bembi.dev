@@ -5,6 +5,7 @@ import { intersectionManager } from '../projects/projects-context';
 import { Switch, Route } from 'react-router-dom';
 import { Home } from '../pages/home/home';
 import { RpjProjectPage } from '~/components/pages/projects/rpj/rpj-project-page';
+import { LiquidProjectPage } from '~/components/pages/projects/liquid/liquid-project-page';
 
 export const App = () => {
 
@@ -24,6 +25,9 @@ export const App = () => {
             </Route>
             <Route path="/projects/rpj">
                 <RpjProjectPage />
+            </Route>
+            <Route path="/projects/liquid">
+                <LiquidProjectPage />
             </Route>
         </Switch>
         
