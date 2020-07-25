@@ -9,7 +9,7 @@
     "watch:server": "watcher",
     "dev": "run-p watch:client watch:server",
     "build:server:prod:linux": "GOARCH=amd64 GOOS=linux CGO_ENABLED=1 go build -ldflags \"-linkmode external -extldflags -static\" main.go",
-    "build:prod": "run-s statik:install statik:assets build:client:prod build:server:prod:linux",
+    "build:prod": "run-s statik:install build:client:prod statik:assets build:server:prod:linux",
     "statik:install": "go get github.com/rakyll/statik",
     "statik:assets": "statik -src=`pwd`/dist/static",
     "deploy": "./project/script/deploy.sh",
