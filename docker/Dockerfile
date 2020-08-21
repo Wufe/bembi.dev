@@ -1,5 +1,10 @@
 FROM kesshin/development:v1.5
 
+ARG GA_UA
+ARG ADSENSE_ID
+ENV GA_UA=$GA_UA
+ENV ADSENSE_ID=$ADSENSE_ID
+
 SHELL ["/bin/zsh", "-c"]
 
 RUN mkdir -p /opt

@@ -7,10 +7,10 @@
 		function gtag(){dataLayer.push(arguments);}
 		gtag('js', new Date());
 
-		gtag('config', 'UA-158343595-1', { 'anonymize_ip': true });
+		gtag('config', "{{ GA_UA || '' }}", { 'anonymize_ip': true });
 	</script>
 
-	<script data-ad-client="ca-pub-{{ADSENSE_ID}}" async
+	<script data-ad-client="ca-pub-{{ ADSENSE_ID || '' }}" async
 		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
