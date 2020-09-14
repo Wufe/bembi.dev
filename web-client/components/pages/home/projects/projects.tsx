@@ -23,7 +23,8 @@ export const Projects = () => {
             title="AIO"
             image={fullAioImage}
             imageFallback={fullFallbackAioImage}
-            link={{ url: 'https://ci.bembi.dev/?ref=demo' }} />
+            link={{ url: 'https://ci.bembi.dev/?ref=demo' }}
+            repoLink={{ label: 'Github', url: 'https://github.com/wufe/aio' }} />
         <ProjectLogo
             header=""
             title="Mònito"
