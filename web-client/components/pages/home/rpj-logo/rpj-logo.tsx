@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './rpj-logo.scss';
 import wideParticlesImage from '/assets/projects/particles/compressed-wide.jpg';
+import fullParticlesImage from '/assets/projects/particles/full.webp';
 import { Link } from 'react-router-dom';
 
 // const ParticlesContainer = React.lazy(() => import('./particles-container/particles-container') as Promise<any>)
@@ -33,18 +34,11 @@ export const RpjLogo = () => {
             <a
                 href="https://rpj.bembi.dev"
                 style={{
-                    backgroundImage: `url('${wideParticlesImage}')`
+                    backgroundImage: `url('${fullParticlesImage}')`
                 }}
                 target="_blank"
                 className="__particles-logo"></a>
-            {/* <projectsContext.Consumer>{projects => {
-                return <>
-                    {projects.rpj && projects.rpj.visible && <React.Suspense fallback={<></>}>
-                        <ParticlesContainer />
-                    </React.Suspense>}
-                    {(!projects.rpj || !projects.rpj.visible) && <div ref={refContainer}>!visible</div>}
-                </>;
-            }}</projectsContext.Consumer> */}
+            <span className="__title">React particles.js</span>
         </div>
         
     </div>;

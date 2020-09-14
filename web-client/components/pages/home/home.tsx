@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './home.scss';
 import { Section, SectionAlignment } from '~/components/section/section';
 import { Tile } from '~/components/tile/tile';
 import { SqlServerIcon } from '~/components/icons/sql-server-icon';
@@ -8,6 +9,10 @@ import { projectsContext, intersectionManager } from '~/components/projects/proj
 import { HomeMenu } from '~/components/pages/home/menu/home-menu';
 import { Header } from '~/components/header/header';
 import { MonitoLogo } from './monito-logo/monito-logo';
+import { ProjectLogo } from './project-logo/project-logo';
+import { Projects } from './projects/projects';
+import { UnityIcon } from '~components/icons/unity-icon';
+import { WebGLIcon } from '~components/icons/webgl';
 
 export const Home = () => {
 
@@ -51,6 +56,8 @@ export const Home = () => {
                 <Tile title="Node.js" icon="devicon-nodejs-plain" />
                 <Tile title="React" icon="devicon-react-original" />
                 <Tile title="Typescript" icon="devicon-typescript-plain" />
+                <Tile title="Unity" icon={UnityIcon} />
+                <Tile title="WebGL" icon={WebGLIcon} />
             </>
         </Section>
         <Contacts id="contacts" />
@@ -63,8 +70,7 @@ export const Home = () => {
                 spaced={true}
                 large={true}
                 grid={false}>
-                <RpjLogo />
-                <MonitoLogo />
+                <Projects />
             </Section>
         </projectsContext.Provider>
         
