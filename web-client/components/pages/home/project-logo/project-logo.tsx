@@ -5,6 +5,7 @@ type TProps = {
     header?: string;
     title: string;
     image: string;
+    imageFallback: string;
     repoLink?: {
         label: string;
         url: string;
@@ -13,7 +14,7 @@ type TProps = {
         label?: string;
         url: string;
     }
-    logoStyles?: React.CSSProperties;
+    // logoStyles?: React.CSSProperties;
     initialBackgroundSize?: string;
 }
 
@@ -32,12 +33,14 @@ export const ProjectLogo = (props: TProps) => {
         <div className="__logo-container">
             <a
                 href={props.link && props.link.url || null}
-                style={{
-                    backgroundImage: `url('${props.image}')`,
-                    ...(props.logoStyles || {})
-                }}
                 target="_blank"
-                className="__logo"></a>
+                className="__logo">
+                <picture>
+                    <source srcSet={props.image} type="image/webp" />
+                    <source srcSet={props.imageFallback} type="image/jpeg" />
+                    <img src={props.imageFallback} alt={props.header} />
+                </picture>
+            </a>
             <span className="__title">{props.title}</span>
         </div>
 

@@ -38,13 +38,20 @@
             cursor: pointer;
             background: #151515;
             position: relative;
-            background-position: center;
-            background-size: auto 200%;
             height: 400px;
-            transition: background-size ease-in-out .4s;
+            overflow: hidden;
 
             &:hover {
-                background-size: auto 250% !important;
+                img {
+                    transform: scale(1.5);
+                }
+            }
+
+            img {
+                width: 100%;
+                height: auto;
+                // object-fit: cover;
+                transition: transform ease-in-out .4s;
             }
         }
 
