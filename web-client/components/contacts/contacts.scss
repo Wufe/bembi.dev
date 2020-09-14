@@ -25,7 +25,7 @@
             flex-direction: column;
         }
 
-        @include medium-up {
+        @include large-up {
             display: grid;
             grid-template-columns: repeat(3, 1fr); 
             grid-template-rows: repeat(5, 1fr);

@@ -33,7 +33,8 @@
         position: relative;
 
         .__logo {
-            display: block;
+            display: flex;
+            justify-content: center;
             text-decoration: none;
             cursor: pointer;
             background: #151515;
@@ -47,9 +48,20 @@
                 }
             }
 
+            picture {
+                text-align: center;
+            }
+
             img {
-                width: 100%;
-                height: auto;
+                width: auto;
+                height: 100%;
+                object-fit: contain;
+                // transform: translateX(-50%);
+                @media screen and (min-width: 768px) {
+                    width: 100%;
+                    height: auto;
+                }
+                
                 // object-fit: cover;
                 transition: transform ease-in-out .4s;
             }
