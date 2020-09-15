@@ -22,15 +22,35 @@
     background-color: #F6F6F6;
     $insetShadowColor: rgba(white, 1);
     box-shadow: inset 0 1px 0 $insetShadowColor, inset -1px 0 0 $insetShadowColor, inset 0 -1px 0 $insetShadowColor, inset 1px 0 0 $insetShadowColor;
+
+    &.--clickable {
+        cursor: pointer;
+        &:hover {
+            opacity: .8;
+            box-shadow: inset 0 1px 0 $insetShadowColor, inset -1px 0 0 $insetShadowColor, inset 0 -1px 0 $insetShadowColor, inset 1px 0 0 $insetShadowColor,
+                0 0 50px rgba(black, .1);
+        }
+    }
+
     @media (prefers-color-scheme: dark) {
         border: 1px solid #222;
         background-color: lighten(#0d0d0d, 3%);
         $insetShadowColor: rgba(#0d0d0d, 1);
         box-shadow: inset 0 1px 0 $insetShadowColor, inset -1px 0 0 $insetShadowColor, inset 0 -1px 0 $insetShadowColor, inset 1px 0 0 $insetShadowColor;
+
+        &.--clickable {
+            &:hover {
+                box-shadow: inset 0 1px 0 $insetShadowColor, inset -1px 0 0 $insetShadowColor, inset 0 -1px 0 $insetShadowColor, inset 1px 0 0 $insetShadowColor,
+                    0 0 50px black;
+                opacity: 1;
+            }
+        }
     }
     border-radius: 3px;
     padding-bottom: 100%;
     position: relative;
+
+    
 
     .tile__content {
         position: absolute;

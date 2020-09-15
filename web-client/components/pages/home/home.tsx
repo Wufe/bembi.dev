@@ -13,10 +13,14 @@ import { ProjectLogo } from './project-logo/project-logo';
 import { Projects } from './projects/projects';
 import { UnityIcon } from '~components/icons/unity-icon';
 import { WebGLIcon } from '~components/icons/webgl';
+import { useModal } from '~components/modal/modal-hooks';
+import { DotnetTileModal } from './tiles/dotnet/dotnet-tile-modal';
+import { TilesModals } from './tiles/modals/tiles-modals';
 
 export const Home = () => {
 
     const [intersectedComponents, setIntersectedComponents] = React.useState(intersectionManager.components);
+    const { show } = useModal();
 
     React.useEffect(() => {
         intersectionManager.registerProvider(manager => {
@@ -33,7 +37,7 @@ export const Home = () => {
             alignment={SectionAlignment.LEFT}
             grid={true}>
             <>
-                <Tile title=".NET" icon="devicon-dot-net-plain" />
+                <Tile title=".NET" icon="devicon-dot-net-plain" onClick={() => show(DotnetTileModal.MODAL_NAME)} />
                 <Tile title="C#" icon="devicon-csharp-plain" />
                 <Tile title="SQL Server" icon={SqlServerIcon} />
                 <Tile title="JS" icon="devicon-javascript-plain" />
@@ -73,7 +77,7 @@ export const Home = () => {
                 <Projects />
             </Section>
         </projectsContext.Provider>
-        
+        <TilesModals />
         
     </>
 }

@@ -20,4 +20,9 @@ body {
 
 .app__container {
     @include full-container;
+    transition: filter linear .4s;
+
+    &.--blurred {
+        filter: blur(6px);
+    }
 }
