@@ -36,6 +36,9 @@
   },
   "dependencies": {
     "foundation-sites": "^6.5.3",
+    "mobx": "^5.15.7",
+    "mobx-react": "^6.3.0",
+    "mobx-state-tree": "^3.17.2",
     "nord": "^0.2.1",
     "react-redux": "^7.2.1"
   }

@@ -16,11 +16,12 @@ import { WebGLIcon } from '~components/icons/webgl';
 import { useModal } from '~components/modal/modal-hooks';
 import { DotnetTileModal } from './tiles/dotnet/dotnet-tile-modal';
 import { TilesModals } from './tiles/modals/tiles-modals';
+import { store } from '~models/store';
 
 export const Home = () => {
 
     const [intersectedComponents, setIntersectedComponents] = React.useState(intersectionManager.components);
-    const { show } = useModal();
+    const { modal } = store.app;
 
     React.useEffect(() => {
         intersectionManager.registerProvider(manager => {
@@ -37,7 +38,7 @@ export const Home = () => {
             alignment={SectionAlignment.LEFT}
             grid={true}>
             <>
-                <Tile title=".NET" icon="devicon-dot-net-plain" onClick={() => show(DotnetTileModal.MODAL_NAME)} />
+                <Tile title=".NET" icon="devicon-dot-net-plain" onClick={() => modal.show(DotnetTileModal.MODAL_NAME)} />
                 <Tile title="C#" icon="devicon-csharp-plain" />
                 <Tile title="SQL Server" icon={SqlServerIcon} />
                 <Tile title="JS" icon="devicon-javascript-plain" />

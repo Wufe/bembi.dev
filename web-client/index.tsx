@@ -3,11 +3,12 @@ import { render } from 'react-dom';
 import { App } from './components/app/app';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { store } from '~state/store';
+import { reduxStore } from '~state/store';
+import { store } from '~models/store';
 
 render(
-    <Provider store={store}>
+    <Provider store={reduxStore}>
         <BrowserRouter>
-            <App />
+            <App modal={store.app.modal} />
         </BrowserRouter>
     </Provider>, document.getElementById('app'));

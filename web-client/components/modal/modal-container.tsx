@@ -1,13 +1,12 @@
 import * as React from 'react';
 import { createPortal } from 'react-dom';
 import { useModal } from '~/components/modal/modal-hooks';
+import { IModal } from '~models/app/modal';
 import './modal-container.scss';
 
-export const ModalContainer = ({ children }: React.PropsWithChildren<{}>) => {
+export const ModalContainer = ({ children, modal }: React.PropsWithChildren<{ modal: IModal }>) => {
 
-    const { visible, hide } = useModal();
-
-    return createPortal(<div className={`modal-container__container ${visible ? '--visible' : ''}`} onClick={() => hide()}>
+    return createPortal(<div className={`modal-container__container ${modal.visible ? '--visible' : ''}`} onClick={() => modal.hide()}>
         <div className={`__modal`} onClick={e => e.stopPropagation()}>
             {children}
         </div>

@@ -1,13 +1,14 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
 import { ModalContainer } from '~/components/modal/modal-container';
 import { useModal, modalContext } from '~/components/modal/modal-hooks';
+import { IModal } from '~models/app/modal';
+import { IStore } from '~models/store';
 
-export const Modal = (props: React.PropsWithChildren<{ name: string }>) => {
+export const Modal = observer((props: React.PropsWithChildren<{ name: string, modal: IModal }>) => {
 
-    const { name } = useModal();
-
-    if (name !== props.name)
+    if (props.modal.name !== props.name)
         return null;
 
-    return <ModalContainer>{props.children}</ModalContainer>;
-}
+    return <ModalContainer modal={props.modal}>{props.children}</ModalContainer>;
+})
