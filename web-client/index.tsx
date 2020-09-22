@@ -5,10 +5,13 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { reduxStore } from '~state/store';
 import { store } from '~models/store';
+import { StoreContextProvider } from '~models/hook';
 
 render(
     <Provider store={reduxStore}>
-        <BrowserRouter>
-            <App modal={store.app.modal} />
-        </BrowserRouter>
+        <StoreContextProvider value={store}>
+            <BrowserRouter>
+                <App />
+            </BrowserRouter>
+        </StoreContextProvider>
     </Provider>, document.getElementById('app'));
