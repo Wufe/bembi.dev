@@ -8,7 +8,7 @@
     .header__hero {
         width: 100%;
         min-height: 400px;
-        padding: 20px 20px 20px 20px;
+        padding: 20px;
         display: flex;
         justify-content: center;
 
@@ -24,15 +24,12 @@
             align-items: flex-start;
 
             .hero__title {
-                min-height: 40%;
                 display: flex;
                 align-items: center;
                 font-size: 4rem;
                 position: relative;
-                // left: +20%;
                 border-radius: 3px;
                 font-weight: 200;
-                padding: 20px;
             }
 
             .hero__subtitle {
@@ -42,18 +39,14 @@
                 position: relative;
                 
                 border-radius: 3px;
-                margin-left: 20px;
                 font-weight: 300;
 
-                margin-left: 20px;
                 @include medium-up {
-                    margin-left: 30px;
                 }
 
-                padding: 0 0 5px 8px;
-
                 &.--nested {
-                    margin-left: 10px;
+                    padding-left: 5px;
+                    margin-top: 20px;
                 }
 
                 &.--accent {
@@ -64,6 +57,7 @@
                 }
 
                 &.--accent-text {
+                    padding-left: 5px;
                     color: #ffb454;
                 }
             }
