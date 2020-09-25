@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { createPortal } from 'react-dom';
-import { useModal } from '~/components/modal/modal-hooks';
 import { IModal } from '~models/app/modal';
 import './modal-container.scss';
 

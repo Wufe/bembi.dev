@@ -1,7 +1,6 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import { ModalContainer } from '~/components/modal/modal-container';
-import { useModal, modalContext } from '~/components/modal/modal-hooks';
 import { IModal } from '~models/app/modal';
 import { IStore } from '~models/store';
 
