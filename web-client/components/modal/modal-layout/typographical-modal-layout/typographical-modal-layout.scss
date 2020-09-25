@@ -61,21 +61,7 @@
 
         a {
             color: #333;
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-
-            &::after {
-                content: ' ';
-                position: absolute;
-                bottom: 3px;
-                left: 0;
-                right: 0;
-                height: 1px;
-                background-color: #AAA;
-            }
-
-            
+            text-decoration-color: #AAA;
         }
     }
 
