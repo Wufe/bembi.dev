@@ -1,0 +1,14 @@
+@import "../../../styles/main";
+
+.indentation-box__component {
+    padding: 10px 0;
+    
+    > .__paragraph {
+        padding: 5px 5px 5px 20px;
+        font-size: 1.1rem !important;
+        line-height: 1.8rem;
+        font-weight: 300;
+        border-left: 4px solid #DADADA;
+        padding-left: 10px;
+    }
+}

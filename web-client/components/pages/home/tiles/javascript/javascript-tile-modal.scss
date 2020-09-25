@@ -1,0 +1,11 @@
+@import "../../../../../styles/main";
+
+.javascript-tile-modal__content {
+    > .__warning-box {
+        margin-bottom: 40px;
+
+        h3 {
+            margin: 10px 0 20px 0;
+        }
+    }
+}

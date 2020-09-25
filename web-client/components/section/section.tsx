@@ -6,6 +6,9 @@ export enum SectionAlignment {
     RIGHT = 'right'
 }
 
+export const SectionTitle = (props: React.PropsWithChildren<{}>) =>
+    <div className="section__title">{props.children}</div>;
+
 export const Section = (props: React.PropsWithChildren<{
     alignment: SectionAlignment;
     spaced?: boolean;
@@ -27,9 +30,10 @@ export const Section = (props: React.PropsWithChildren<{
         `__container
         --${props.alignment}-align`
     }>
-        <div className="section__title">{props.title}</div>
+        <SectionTitle>{props.title}</SectionTitle>
         <>
             {props.children}
         </>
     </div>
 </div>
+
