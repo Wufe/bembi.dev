@@ -1,4 +1,6 @@
+import { observer } from 'mobx-react';
 import * as React from 'react';
+import { store } from '~models/store';
 import './typographical-modal-layout.scss';
 
 type TProps = {
@@ -6,8 +8,9 @@ type TProps = {
     actionsRenderer?: () => JSX.Element;
 }
 
-export const TypographicalModalLayout = (props: React.PropsWithChildren<TProps>) => {
+export const TypographicalModalLayout = observer((props: React.PropsWithChildren<TProps>) => {
     return <div className="modal typographical-modal-layout__component">
+        <div className="__close-button" onClick={store.app.modal.hide}>X</div>
         {props.title && <div className="__header">
             <h1>{props.title}</h1>
         </div>}
@@ -18,4 +21,4 @@ export const TypographicalModalLayout = (props: React.PropsWithChildren<TProps>)
             {props.actionsRenderer && props.actionsRenderer()}
         </div>
     </div>
-}
+});

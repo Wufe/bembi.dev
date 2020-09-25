@@ -19,9 +19,11 @@
             position: absolute;
             top: 0px;
             bottom: 0px;
-            // left: 100px;
-            // right: 100px;
-            align-items: flex-start;
+            align-items: center;
+
+            @include medium-up {
+                align-items: flex-start;
+            }
 
             .hero__title {
                 display: flex;
@@ -30,6 +32,14 @@
                 position: relative;
                 border-radius: 3px;
                 font-weight: 200;
+                max-width: 100%;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                @include medium-up {
+                    flex-wrap: nowrap;
+                    justify-content: flex-start;
+                }
             }
 
             .hero__subtitle {

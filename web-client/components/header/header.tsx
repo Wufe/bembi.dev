@@ -6,7 +6,7 @@ export const Header = () =>
         <div className="header__hero">
             <div className="hero__text-container">
                 <div className="hero__title">
-                    Simone Bembi
+                    <span>Simone</span> <span>Bembi</span>
                 </div>
                 <div className="hero__subtitle --nested">
                     Software developer
