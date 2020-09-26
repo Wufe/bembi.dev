@@ -17,6 +17,10 @@ import { SQLServerTileModal } from './tiles/sql-server/sql-server-tile-modal';
 import { JavascriptTileModal } from './tiles/javascript/javascript-tile-modal';
 import { VueTileModal } from './tiles/vue/vue-tile-modal';
 import { ReactTileModal } from './tiles/react-tile-modal/react-tile-modal';
+import { NodeTileModal } from './tiles/node-tile-modal/node-tile-modal';
+import { LinuxTileModal } from './tiles/linux-tile-modal/linux-tile-modal';
+import { GoTileModal } from './tiles/go-tile-modal/go-tile-modal';
+import { WebGLTileModal } from './tiles/webgl-tile-modal/webgl-tile-modal';
 
 export const Home = () => {
 
@@ -55,14 +59,14 @@ export const Home = () => {
             large={true}
             grid={true}>
             <>
-                <Tile title="Linux" icon="devicon-linux-plain" />
-                <Tile title="Docker" icon="devicon-docker-plain" />
-                <Tile title="Node.js" icon="devicon-nodejs-plain" />
+                <Tile title="Linux" icon="devicon-linux-plain" onClick={() => modal.show(LinuxTileModal.MODAL_NAME)} />
+                <Tile title="Docker" icon="devicon-docker-plain" onClick={() => modal.show(LinuxTileModal.MODAL_NAME)} />
+                <Tile title="Node.js" icon="devicon-nodejs-plain" onClick={() => modal.show(NodeTileModal.MODAL_NAME)} />
                 <Tile title="React" icon="devicon-react-original" onClick={() => modal.show(ReactTileModal.MODAL_NAME)} />
                 <Tile title="Typescript" icon="devicon-typescript-plain" onClick={() => modal.show(ReactTileModal.MODAL_NAME)} />
-                <Tile title="Go" icon="devicon-go-plain" />
-                <Tile title="Unity" icon={UnityIcon} />
-                <Tile title="WebGL" icon={WebGLIcon} />
+                <Tile title="Go" icon="devicon-go-plain" onClick={() => modal.show(GoTileModal.MODAL_NAME)} />
+                <Tile title="Unity" icon={UnityIcon} onClick={() => modal.show(WebGLTileModal.MODAL_NAME)} />
+                <Tile title="WebGL" icon={WebGLIcon} onClick={() => modal.show(WebGLTileModal.MODAL_NAME)} />
             </>
         </Section>
         
